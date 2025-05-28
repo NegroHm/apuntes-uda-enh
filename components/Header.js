@@ -36,7 +36,7 @@ export default function Header() {
             <img src="cafe.png" alt="Café" />
           </div>
           <div className={styles.coffeeText}>
-            <p>Invitanos un cafe si nuestra herramienta te ayudo</p>
+            <p>Invitanos un cafe</p>
             <button className={styles.coffeeButton}>Donar un cafecito</button>
           </div>
         </div>

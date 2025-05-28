@@ -248,8 +248,8 @@
 }
 
 .footerLogo {
-  width: 135px;
-  margin-bottom: 10px;
+  width: 100px;
+  margin: 20px;
 }
 
 .footerText {
@@ -258,7 +258,7 @@
 }
 
 .footerBottom {
-  background-color: #a8e4ff; /* celeste un poco más fuerte */
+  background-color: #8ebae8; /* celeste un poco más fuerte */
   width: 100%;
   text-align: center;
   color: #004d66;
@@ -303,7 +303,7 @@
 }
 
 .logoImage {
-  height: 90px;
+  height: 55px;
   margin-right: 10px;
 }
 
@@ -352,7 +352,7 @@
   align-items: center;
   background-color: #a2b2dc;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 8px;
   max-width: 200px;
   gap: 8px;
   font-size: 12px;
@@ -363,9 +363,10 @@
 }
 
 .coffeeText p {
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   flex: 1;
-  font-size: 10px;
+  font-size: 15px;
   color: #000;
 }
 
