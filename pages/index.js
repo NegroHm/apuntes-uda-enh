@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import React, { useState } from 'react';
 import styles from '../styles/Home.module.css'
+import Header from '../components/Header'; 
+import Footer from '../components/Footer';
 import HeaderImage from '../components/HeaderImage';
 import GoogleDriveSearch from '../components/GoogleDriveSearch'
 import SimpleSignOn from '../components/SimpleSignOn'
@@ -11,10 +13,11 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Apuntes UDA</title>
-        <link rel="icon" href="/logo.jpg" />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       <SimpleSignOn>
+        <Header />
         <main className={styles.main}>
           <HeaderImage />
           
@@ -24,9 +27,7 @@ export default function Home() {
 
         </main>
 
-        <footer className={styles.footer}>
-          
-        </footer>
+         <Footer /> {/* Usá el nuevo Footer */}
       
       </SimpleSignOn>
     </div>

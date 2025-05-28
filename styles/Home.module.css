@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,16 +20,16 @@
 
 .footer {
   width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  border-top: 1px solid #0077a3; /* línea superior */
+  font-family: 'Georgia', serif;
+  color: #000000;
+  font-size: 14px;
 }
 
-.footer img {
-  margin-left: 0.5rem;
-}
+
 
 .footer a {
   display: flex;
@@ -95,7 +95,7 @@
   transition:  color 0.15s ease, border-color 0.15s ease; 
   color: #ffffff;
   border-color: #165260 ;
-  background-color: #02d9ff;
+  background-color: #5599e2;
 }
 
 .card:hover,
@@ -234,4 +234,152 @@
 
 .fileResult:nth-child(even) {
   background-color: #f4ffee;
+}
+
+
+
+/* nuevo footer */
+
+
+.footerContent {
+  text-align: center;
+  max-width: 500px;
+  margin-bottom: 15px;
+}
+
+.footerLogo {
+  width: 135px;
+  margin-bottom: 10px;
+}
+
+.footerText {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footerBottom {
+  background-color: #a8e4ff; /* celeste un poco más fuerte */
+  width: 100%;
+  text-align: center;
+  color: #004d66;
+  border-top: 1px solid #0077a3;
+}
+
+
+
+
+/*!!! CSS DEL HEADER */
+
+
+.header {
+  width: 100%;
+  font-family: 'Georgia', serif;
+  color: #000;
+}
+
+/* Barra superior celeste */
+.headerTopBar {
+  background-color: #8ebae8;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 0;
+}
+
+/* Contenedor principal del header */
+.headerMain {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo + texto */
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 90px;
+  margin-right: 10px;
+}
+
+.logoText h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.logoHighlight {
+  color: #25b3ff; /* azul celeste */
+}
+
+.logoText p {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Menú de navegación */
+.navMenu {
+  display: flex;
+  gap: 40px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+  border-bottom-color: #25b3ff; /* subrayado celeste */
+}
+
+/* Sección café */
+.coffeeSection {
+  display: flex;
+  align-items: center;
+  background-color: #a2b2dc;
+  border-radius: 8px;
+  padding: 8px 12px;
+  max-width: 200px;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.coffeeIcon img {
+  height: 40px;
+}
+
+.coffeeText p {
+  margin: 0;
+  flex: 1;
+  font-size: 10px;
+  color: #000;
+}
+
+.coffeeButton {
+  background-color: #6a7ab8;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.coffeeButton:hover {
+  background-color: #4a578a;
 }
