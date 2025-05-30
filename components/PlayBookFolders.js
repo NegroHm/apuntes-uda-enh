@@ -54,7 +54,8 @@ const PlayBookFolders = () => {
   }, [targetFolderId]);
 
   return (
-      <div style={{ width: "100%", textAlign: "left" }}>
+      // <div style={{ width: "100%", textAlign: "center",   justifyContent: "center" }}>
+      <div className="flex flex-1 items-center justify-center w-full">
         {loading && <div style={{ display: "none" }}>Loading...</div>}
         {error && <div>{error.message}</div>}
         <div className={styles.grid}>
@@ -84,6 +85,8 @@ const PlayBookFolders = () => {
           ))}
         </div>
       </div>
+
+
   );
 };
 
