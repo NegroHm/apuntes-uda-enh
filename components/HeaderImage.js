@@ -13,7 +13,7 @@ const HeaderImage = () => (
                     style={{ width: config.components.HeaderImage.logo_width, color: config.components.HeaderImage.logo_color }}
                 /> */}
                 <div className={styles.logoText}>
-                        <h1>
+                        <h1 style={{ fontSize: '20px' }}>
                         APUNTES <span className={styles.logoHighlight}>UDA</span>
                         </h1>
                     <p>Por y para los estudiantes</p>
