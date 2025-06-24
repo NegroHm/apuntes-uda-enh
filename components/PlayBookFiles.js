@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/dist/client/router';
 import axios from "axios";
-import config from "../config.json";
+import config from "../lib/config";
 import styles from '../styles/Home.module.css';
 import handleAccessTokenExpiration from "./HandleAccessTokenExpiration";
 import handleGoogleDriveShortcutLink from "./HandleGoogleDriveShortcutLink";

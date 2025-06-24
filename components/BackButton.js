@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 import axios from 'axios';
 import IconUpLevel from './IconUpLevel';
-import config from "../config.json";
+import config from "../lib/config";
 
 const BackButton = () => {
   const router = useRouter();

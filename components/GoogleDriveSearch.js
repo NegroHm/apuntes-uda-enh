@@ -135,7 +135,7 @@
 
 import React, { useState , useEffect, useRef} from "react";
 import axios from "axios";
-import config from "../config.json";
+import config from "../lib/config";
 import handleAccessTokenExpiration from "./HandleAccessTokenExpiration";
 import handleGoogleDriveShortcutLink from "./HandleGoogleDriveShortcutLink";
 import styles from '../styles/Home.module.css'

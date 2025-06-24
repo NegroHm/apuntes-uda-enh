@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import config from "../config.json";
+import config from "../lib/config";
 import styles from '../styles/Home.module.css';
 
 const HeaderImage = () => (

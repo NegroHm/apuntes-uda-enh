@@ -7,6 +7,7 @@ import HeaderImage from '../components/HeaderImage';
 import GoogleDriveSearch from '../components/GoogleDriveSearch'
 import SimpleSignOn from '../components/SimpleSignOn'
 import PlayBookFolders from '../components/PlayBookFolders';
+import DebugConfig from '../components/DebugConfig';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
 
       <SimpleSignOn>
         <Header />
+        <DebugConfig />
         <main className={styles.main}>
           <HeaderImage />
           

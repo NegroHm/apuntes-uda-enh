@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import BackButton from './BackButton';
-import config from "../config.json";
+import config from "../lib/config";
 import axios from 'axios';
 import styles from '../styles/Home.module.css'
 

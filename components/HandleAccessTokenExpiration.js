@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import config from "../config.json";
+import config from "../lib/config";
 
 const handleAccessTokenExpiration = async () => {
   const refreshToken = localStorage.getItem("refresh_token");
