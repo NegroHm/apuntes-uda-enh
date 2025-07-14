@@ -1,54 +1,45 @@
-import React, { useState, useEffect } from "react";
-import Router from "next/router";
+// pages/login.js
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import axios from "axios";
-import config from "../lib/config"; // Updated import
+import config from "../lib/config";
 
-const handleRedirect = async (code, currentURL = "") => {
-	const redirectUri = currentURL.replace(/\/login.*/, "/login");
+const LoginPage = () => {
+  const router = useRouter();
+  const { code } = router.query;
+  const redirectUri = `${config.components.HeaderImage.homepage_url}/login`;
 
-	try {
-		console.log(currentURL);
-		const response = await axios.post("https://oauth2.googleapis.com/token", {
-			code: code,
-			client_id: config.api.client_id,
-			client_secret: config.api.client_secret,
-			redirect_uri: redirectUri,
-			grant_type: "authorization_code",
-		});
+  useEffect(() => {
+    // 1️⃣ Si NO hay código, lanza la petición de autorización
+    if (!code) {
+      const authUrl =
+        "https://accounts.google.com/o/oauth2/v2/auth?" +
+        `client_id=${encodeURIComponent(config.api.client_id)}` +
+        `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+        `&response_type=code` +
+        `&access_type=offline` +
+        `&prompt=consent` +
+        `&scope=${encodeURIComponent(config.api.scopes)}`;
+      window.location.href = authUrl;
+      return;
+    }
 
-		//console.log('response')
-		//console.log(response.data)
+    // 2️⃣ Si YA llegaste con el código, haz el exchange en tu API route
+    (async () => {
+      try {
+        const { data } = await axios.get(`/api/token?code=${encodeURIComponent(code)}`);
+        localStorage.setItem("access_token", data.access_token);
+        localStorage.setItem("refresh_token", data.refresh_token);
+        router.replace("/");  // redirige a home
+      } catch (err) {
+        console.error("Token exchange failed:", err.response?.data || err.message);
+        alert("Error intercambiando código por tokens. " +
+              (err.response?.data.error_description || err.message));
+      }
+    })();
+  }, [code, redirectUri, router]);
 
-		const accessToken = response.data.access_token;
-		const refreshToken = response.data.refresh_token;
-
-		localStorage.setItem("code", code);
-		localStorage.setItem("access_token", accessToken);
-		localStorage.setItem("refresh_token", refreshToken);
-		Router.push("/");
-	} catch (err) {
-		alert(err);
-	}
+  return <p>Redirigiendo a Google…</p>;
 };
 
-const Page = ({ code }) => {
-	const [currentURL, setCurrentURL] = useState(null);
-
-	useEffect(() => {
-		setCurrentURL(window.location.href);
-	}, []);
-
-	useEffect(() => {
-		if (currentURL) {
-			handleRedirect(code, currentURL);
-		}
-	}, [currentURL]);
-
-	return <div>Redirecting...</div>;
-};
-
-Page.getInitialProps = async ({ query }) => {
-	return { code: query.code };
-};
-
-export default Page;
+export default LoginPage;
