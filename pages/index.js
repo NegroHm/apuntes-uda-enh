@@ -19,7 +19,6 @@ export default function Home() {
 
       <SimpleSignOn>
         
-        
         <main className={styles.main}>
           <HeaderImage />
           
