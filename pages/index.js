@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
 
       <SimpleSignOn>
-        <Header />
+        
         
         <main className={styles.main}>
           <HeaderImage />
@@ -29,8 +29,6 @@ export default function Home() {
 
         </main>
 
-         <Footer /> {/* Usá el nuevo Footer */}
-      
       </SimpleSignOn>
     </div>
   )
