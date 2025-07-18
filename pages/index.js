@@ -17,8 +17,8 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <SimpleSignOn>
-        
+      {/*<SimpleSignOn> */}
+
         <main className={styles.main}>
           <HeaderImage />
           
@@ -27,8 +27,8 @@ export default function Home() {
           <PlayBookFolders />
 
         </main>
-
-      </SimpleSignOn>
+        
+        {/*</SimpleSignOn>*/}
     </div>
   )
 }
